@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Nuestra playlist de aniversario"
+  >
+
+  <title>Nuestra Playlist ❤️</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <!-- Fondo decorativo -->
+  <div class="background-glow"></div>
+
+  <div class="app">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="sidebar">
+
+      <div class="logo">
+        <i class="fa-solid fa-heart"></i>
+        <span>OurMusic</span>
+      </div>
+
+      <nav class="menu">
+        <button class="menu-item active" data-section="inicio">
+          <i class="fa-solid fa-house"></i>
+          Inicio
+        </button>
+
+        <button class="menu-item" data-section="ella">
+          <i class="fa-solid fa-heart-circle-check"></i>
+          Las que me dedicó
+        </button>
+
+        <button class="menu-item" data-section="yo">
+          <i class="fa-solid fa-music"></i>
+          Las que le dediqué
+        </button>
+
+        <button class="menu-item" data-section="nosotros">
+          <i class="fa-solid fa-people-roof"></i>
+          Nuestras canciones
+        </button>
+      </nav>
+
+      <div class="sidebar-message">
+        <p>Hecho con amor para nuestro primer año.</p>
+        <span>❤️ Billy y Sarahí</span>
+      </div>
+
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- CABECERA -->
+      <header class="topbar">
+        <div>
+          <p class="small-text">Nuestra historia en canciones</p>
+          <h1>365 días contigo</h1>
+        </div>
+
+        <button id="surpriseButton" class="surprise-button">
+          <i class="fa-solid fa-gift"></i>
+          Sorpresa
+        </button>
+      </header>
+
+      <!-- PORTADA -->
+      <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+          <div class="cover-container">
+            <img
+              src="assets/img/cumple.jpeg"
+              alt="Foto principal de nosotros"
+              class="main-cover"
+            >
+          </div>
+
+          <div class="hero-information">
+            <span class="playlist-label">PLAYLIST ESPECIAL</span>
+
+            <h2>Nuestro primer año ❤️</h2>
+
+            <p>
+              Cada canción de esta playlist guarda un recuerdo,
+              una dedicatoria o un momento especial de nosotros.
+            </p>
+
+            <div class="playlist-data">
+              <strong>Billy y Sarahí</strong>
+              <span>•</span>
+              <span id="songCount">0 canciones</span>
+              <span>•</span>
+              <span>Para siempre</span>
+            </div>
+
+            <div class="hero-actions">
+              <button id="playAllButton" class="main-play-button">
+                <i class="fa-solid fa-play"></i>
+              </button>
+
+              <button
+                id="randomButton"
+                class="secondary-button"
+                title="Reproducir aleatoriamente"
+              >
+                <i class="fa-solid fa-shuffle"></i>
+              </button>
+
+              <button
+                id="openLetterButton"
+                class="secondary-button"
+                title="Abrir carta"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- FILTROS -->
+      <section class="filters">
+        <button class="filter-button active" data-filter="todas">
+          Todas
+        </button>
+
+        <button class="filter-button" data-filter="ella">
+          Las que ella me dedicó
+        </button>
+
+        <button class="filter-button" data-filter="yo">
+          Las que le dediqué
+        </button>
+
+        <button class="filter-button" data-filter="nosotros">
+          Nuestras
+        </button>
+      </section>
+
+      <!-- LISTA DE CANCIONES -->
+      <section class="songs-section">
+
+        <div class="section-toolbar">
+          <div><p class="eyebrow">Playlist compartida</p><h2>Canciones de los dos</h2></div>
+          <button id="openSongFormButton" class="add-content-button"><i class="fa-solid fa-plus"></i> Agregar canción</button>
+        </div>
+
+        <div class="songs-header">
+          <span>#</span>
+          <span>Título</span>
+          <span>Dedicatoria</span>
+          <span class="duration-header">
+            <i class="fa-regular fa-clock"></i>
+          </span>
+        </div>
+
+        <div id="songsContainer" class="songs-container"></div>
+
+      </section>
+
+      <!-- RECUERDOS -->
+      <section class="memories-section">
+        <div class="section-heading">
+          <p>Nuestros momentos</p>
+          <h2>Recuerdos de nuestro año</h2>
+        </div>
+
+        <button id="openMemoryFormButton" class="add-content-button memory-add-button"><i class="fa-solid fa-plus"></i> Agregar recuerdo</button>
+
+        <div id="memoriesGrid" class="memories-grid">
+
+          <article class="memory-card">
+            <img src="assets/img/cumple.jpeg" alt="Nuestro primer recuerdo">
+
+            <div class="memory-content">
+              <span>El comienzo</span>
+              <h3>Cuando empezó nuestra primer foto jeje.</h3>
+              <p>
+                Fue por mi cumpleaños como no aprovechar a tomarnos una foto de lo hermoso que somos.
+              </p>
+            </div>
+          </article>
+
+          <article class="memory-card">
+            <img src="assets/img/comida.jpg" alt="Un momento especial">
+
+            <div class="memory-content">
+              <span>Un día especial</span>
+              <h3>Uno de mis recuerdos favoritos</h3>
+              <p>
+                Cumpleaños de mi querida novia, aun nerviosa pero la pasamos bien :).
+              </p>
+            </div>
+          </article>
+
+          <article class="memory-card">
+            <img src="assets/img/6meses.jpg" alt="Nuestro aniversario">
+
+            <div class="memory-content">
+              <span>Actividad juntos</span>
+              <h3>Nuestro sexto aniversario</h3>
+              <p>
+                Gracias por cada momento, cada risa y cada gusto
+                compartido.
+              </p>
+            </div>
+          </article>
+
+          <article class="memory-card">
+            <img src="assets/img/6meses.jpg" alt="Nuestro aniversario">
+
+            <div class="memory-content">
+              <span>365 días</span>
+              <h3>Nuestro primer aniversario</h3>
+              <p>
+                Gracias por cada momento, cada risa y cada canción
+                compartida.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Esta página fue creada especialmente para ti.
+          Gracias por este primer año ❤️
+        </p>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- REPRODUCTOR INFERIOR -->
+  <footer class="music-player">
+
+    <div class="current-song">
+
+      <img
+        id="currentCover"
+        src="assets/img/cumple.jpeg"
+        alt="Portada de la canción"
+      >
+
+      <div class="current-song-information">
+        <strong id="currentTitle">Selecciona una canción</strong>
+        <span id="currentArtist">Nuestra playlist</span>
+      </div>
+
+      <button id="favoriteButton" class="icon-button">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+
+    </div>
+
+    <div class="player-controls">
+
+      <div class="control-buttons">
+
+        <button id="shuffleButton" class="icon-button">
+          <i class="fa-solid fa-shuffle"></i>
+        </button>
+
+        <button id="previousButton" class="icon-button">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+
+        <button id="playPauseButton" class="play-pause-button">
+          <i class="fa-solid fa-play"></i>
+        </button>
+
+        <button id="nextButton" class="icon-button">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+
+        <button id="repeatButton" class="icon-button">
+          <i class="fa-solid fa-repeat"></i>
+        </button>
+
+      </div>
+
+      <div class="progress-container">
+        <span id="currentTime">0:00</span>
+
+        <input
+          id="progressBar"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+        >
+
+        <span id="duration">0:00</span>
+      </div>
+
+    </div>
+
+    <div class="volume-container">
+      <i class="fa-solid fa-volume-high"></i>
+
+      <input
+        id="volumeBar"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.8"
+      >
+    </div>
+
+  </footer>
+
+  <!-- CARTA -->
+  <div id="letterModal" class="modal">
+
+    <div class="modal-content">
+
+      <button id="closeLetterButton" class="close-button">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="letter-icon">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+
+      <h2>Para el amor de mi vida ❤️</h2>
+
+      <div class="letter-text">
+        <p>Mi amor:</p>
+
+        <p>
+          Hoy cumplimos nuestro primer año y quería darte algo diferente.
+          Esta página guarda algunas de las canciones que han formado
+          parte de nuestra historia.
+        </p>
+
+        <p>
+          Gracias por todos los momentos que hemos vivido, por las risas,
+          por acompañarme y por convertir días normales en recuerdos
+          especiales.
+        </p>
+
+        <p>
+          Espero que este sea solamente el primero de muchos años juntos.
+          Te amo muchísimo.
+        </p>
+
+        <p class="letter-signature">
+          Con amor,<br>
+          Billy ❤️
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MENSAJE SORPRESA -->
+  <div id="surpriseModal" class="modal">
+
+    <div class="modal-content surprise-content">
+
+      <button id="closeSurpriseButton" class="close-button">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="big-heart">❤️</div>
+
+      <h2>¡Feliz primer aniversario!</h2>
+
+      <p>
+        De todas las canciones del mundo, tú siempre serás mi favorita.
+      </p>
+
+      <div class="floating-hearts">
+        <span>❤️</span>
+        <span>💖</span>
+        <span>💕</span>
+        <span>❤️</span>
+        <span>💗</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="songFormModal" class="modal"><div class="modal-content form-modal-content">
+    <button class="close-button" data-close="songFormModal" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <p class="eyebrow">Una nueva dedicatoria</p><h2>Agregar canción</h2>
+    <form id="songForm" class="content-form">
+      <label>Título<input name="title" required maxlength="80"></label><label>Artista<input name="artist" required maxlength="80"></label>
+      <label>¿Quién la dedicó?<select name="category" required><option value="ella">Ella me la dedicó</option><option value="yo">Yo se la dediqué</option><option value="nosotros">Es nuestra canción</option></select></label>
+      <label class="full-field">Dedicatoria<textarea name="dedication" required maxlength="500" rows="4"></textarea></label>
+      <label>Portada<input name="cover" type="file" accept="image/jpeg,image/png,image/webp" required></label><label>Archivo de música<input name="audio" type="file" accept="audio/mpeg,audio/mp4,audio/wav,audio/ogg" required></label>
+      <label class="full-field">Clave para agregar<input name="pin" type="password" required></label><p class="form-status" aria-live="polite"></p>
+      <button class="submit-content-button" type="submit"><i class="fa-solid fa-cloud-arrow-up"></i> Guardar canción</button>
+    </form>
+  </div></div>
+  <div id="memoryFormModal" class="modal"><div class="modal-content form-modal-content">
+    <button class="close-button" data-close="memoryFormModal" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <p class="eyebrow">Nuestro álbum</p><h2>Agregar recuerdo</h2>
+    <form id="memoryForm" class="content-form">
+      <label>Fecha o etiqueta<input name="label" required maxlength="50" placeholder="Ej. 8 meses"></label><label>Título<input name="title" required maxlength="100"></label>
+      <label class="full-field">Historia<textarea name="description" required maxlength="700" rows="5"></textarea></label><label class="full-field">Foto<input name="image" type="file" accept="image/jpeg,image/png,image/webp" required></label>
+      <label class="full-field">Clave para agregar<input name="pin" type="password" required></label><p class="form-status" aria-live="polite"></p>
+      <button class="submit-content-button" type="submit"><i class="fa-solid fa-cloud-arrow-up"></i> Guardar recuerdo</button>
+    </form>
+  </div></div>
+
+  <audio id="audioPlayer"></audio>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
