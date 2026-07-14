@@ -595,8 +595,8 @@ function cleanFileName(name) {
 }
 
 async function blobUpload(pathname, file, pin, onProgress) {
-  const { upload } = await import("https://esm.sh/@vercel/blob@2.0.0/client");
-  return upload(pathname, file, { access: "public", handleUploadUrl: "/api/upload", clientPayload: JSON.stringify({ pin }), multipart: file.size > 20 * 1024 * 1024, onUploadProgress: onProgress });
+  const { uploadPresigned } = await import("https://esm.sh/@vercel/blob@2.6.1/client");
+  return uploadPresigned(pathname, file, { access: "public", handleUploadUrl: "/api/upload", clientPayload: JSON.stringify({ pin }), multipart: file.size > 20 * 1024 * 1024, onUploadProgress: onProgress });
 }
 
 async function saveMetadata(type, data, pin) {
